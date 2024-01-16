@@ -1,0 +1,77 @@
+Try to explain why it generates “Invalid read of size 1”.
+
+It generates because analyzeCoActors is trying to read a byte that has not been allocated. This is because of
+the stop condition being linked to the wrong variable instead of coactors.end();.
+
+Any ideas why the program stops with “segmentation fault”?
+
+It is because it is looping further than the allocated memory.
+This causes this error.
+
+
+-----------------------------------------------------------------
+
+
+
+#5 0x000055555555a82e in analyzeCoActors
+(imdb=...) at Lab5.cpp:152
+#6 0x000055555555a455 in main (argc=2, argv=0x7fffffffe458)
+at Lab5.cpp:114
+
+1. Describe the reason the program goes into endless loop, under what kind of user
+input?
+
+The reason why the program goes in an endless loop is because the while loops condotion is
+true (ex: while(true)) in the if statement below, the "validInput = false" does essentially nothing.
+This happens to any other user input that is not "Q" or "q", or a number; basically strings.
+
+2. When the program goes into endless loop, what is the value of
+input_to_check?
+
+The value is any string or char that I enter. It fails when I enter "two" or when I enter "?".
+So any string or char causes a loop to occur infinitely.
+
+3. Provide your solution. (either by coding statement or by description)
+
+ int option;
+    bool validInput = true; // moved here
+    while (validInput) // changed true to validInput
+    {
+        cout << "This application stores information about Actors and their Movies, please choose your option (Enter Q or q to quit):" << endl;
+        cout << "1. Actors in Movies" << endl;
+        cout << "2. Actors and co-actors" << endl;
+        cin >> option;
+
+        if (cin.fail())
+        {
+            string input_to_check;
+            cin >> input_to_check;
+            if (input_to_check == "Q" || input_to_check == "q")
+                break;
+            else
+            {
+                cout << "Expecting a number as the option!" << endl;
+                validInput = false;
+            }
+	    cin.clear();
+        }
+        // get rid of anything left in the input stream
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        // if there is a valid input option
+        if (validInput)
+        {
+            switch (option)
+            {
+                case 1: // leave it do nothing for Lab5
+                        // you have finished this part in Lab4
+                        break;
+                case 2:  analyzeCoActors(cs216_imdb);
+                        break;
+                default:
+                        cout << "Invalid option number!" << endl;
+            }
+        }
+    }
+    cout << "Thank you for using my program, bye..." << endl;
+    return 0;
