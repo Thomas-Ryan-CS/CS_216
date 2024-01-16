@@ -1,0 +1,55 @@
+    1  $ssh tpry222@tpry222.cs.uky.edu
+    2  man
+    3  ls
+    4  ls-l
+    5  ls -l
+    6  cd dir
+    7  cd
+    8  cd..
+    9  cd ..
+   10  cd dir
+   11  cd ~
+   12  cs ~
+   13  CD ~
+   14  CD..
+   15  cd ..
+   16  cd ~
+   17  cd CS 216
+   18  mkdir CS216
+   19  ls
+   20  cd lab1
+   21  cd CS216
+   22  mkdir Lab1
+   23  cd Lab1
+   24  ls
+   25  pwd
+   26  pwd > file1
+   27  cat file1
+   28  ls -l
+   29  ls -l >> file1
+   30  LS
+   31  ls
+   32  cowsay "Hello, Charlie Brown. I am Thomas Ryan."
+   33  cowsay "Hello, Michael Hentz. I am Thomas Ryan."
+   34  cat file1
+   35  cowsay "Hello, Michael Hentz. I am Thomas Ryan." >> file1
+   36  cat file1
+   37  echo shell
+   38  echo $shell
+   39  echo $SHELL
+   40  echo "Hello, World!"
+   41  echo "Unix fun"
+   42  echo "Unix fun" | rev
+   43  echo "Murder for a jar of red rum"
+   44  echo "Murder for a jar of red rum" | rev
+   45  man las
+   46  man ls
+   47  history  > file2
+                                                                             
+ mmmmmm           "                          mmm   mmmm   mmmm  mmm      mmm 
+ #      m mm    mmm    mmm   m   m         m"   " #"   " "   "#   #    m"   "
+ #mmmmm #"  #     #   #" "#  "m m"         #      "#mmm      m"   #    #m""#m
+ #      #   #     #   #   #   #m#          #          "#   m"     #    #    #
+ #mmmmm #   #     #   "#m#"   "#            "mmm" "mmm#" m#mmmm mm#mm   #mm#"
+                  #           m"                                             
+                ""           ""                                              
